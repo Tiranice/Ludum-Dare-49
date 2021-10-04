@@ -191,6 +191,9 @@ namespace LudumDare49
         public override void Interact()
         {
             base.Interact();
+
+            if (_carrySocket.IsCarrying) return;
+
             TryGetComponent(out Collider collider);
             collider.enabled = false;
             TryGetComponent(out Rigidbody rigidbody);

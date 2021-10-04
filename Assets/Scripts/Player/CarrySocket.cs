@@ -98,6 +98,8 @@ namespace LudumDare49
 
         private void CarryObject(GameObject target)
         {
+            if (IsCarrying) return;
+
             _carriedObject = target;
             _carriedObject.TryGetComponent(out Rigidbody rigidbody);
             rigidbody.useGravity = false;
@@ -108,6 +110,8 @@ namespace LudumDare49
 
         public void DropCarriedObject()
         {
+            if (!IsCarrying) return;
+
             _carriedObject.TryGetComponent(out Rigidbody rigidbody);
             rigidbody.useGravity = true;
             rigidbody.drag = 0.0f;

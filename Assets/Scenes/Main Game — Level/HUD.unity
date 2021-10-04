@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 378334321}
   - component: {fileID: 378334320}
   m_Layer: 5
-  m_Name: Button West
+  m_Name: RT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5896583775246068787, guid: 781430524a57a69459e556b5c2e3fd2a, type: 3}
+  m_Sprite: {fileID: -6825893594525092589, guid: 781430524a57a69459e556b5c2e3fd2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6825893594525092589, guid: 781430524a57a69459e556b5c2e3fd2a, type: 3}
+  m_Sprite: {fileID: -5896583775246068787, guid: 781430524a57a69459e556b5c2e3fd2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: accf11f79aeddb844aae6bffe041709c, type: 2}
+      - m_Target: {fileID: 11400000, guid: 4f7a7f2419548554d98f68ec467b44f6, type: 2}
         m_TargetAssemblyTypeName: TirUtilities.Signals.LevelLoadSignal, TirUtilities.Runtime
         m_MethodName: Emit
         m_Mode: 1

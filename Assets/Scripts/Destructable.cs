@@ -48,13 +48,13 @@ namespace LudumDare49
 
         public void CheckExplosion(Collision collision)
         {
-            LogCall();
             if (!collision.gameObject.TryGetComponent(out Bomb bomb) || bomb.ExplosiveForce < _breakForce)
                 return;
 
-            Debug.Log($"Exploding {gameObject.name}");
-
             _solid.SetActive(false);
+            
+            _composite.transform.SetPositionAndRotation(_solid.transform.position, _solid.transform.rotation);
+
             _composite.SetActive(true);
             var rigidbodies = _composite.GetComponentsInChildren<Rigidbody>();
             foreach (var rigidbody in rigidbodies)

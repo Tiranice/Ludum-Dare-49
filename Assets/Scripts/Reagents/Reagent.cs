@@ -46,6 +46,9 @@ namespace LudumDare49
         public override void Interact()
         {
             base.Interact();
+
+            if (FindObjectOfType<CarrySocket>().IsCarrying) return;
+
             TryGetComponent(out Collider collider);
             collider.enabled = false;
             _carrySocketSignal.Emit(gameObject);

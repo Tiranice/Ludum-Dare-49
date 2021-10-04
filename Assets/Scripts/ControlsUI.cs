@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TirUtilities.Controllers.Experimental;
 using TirUtilities.Signals;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 namespace LudumDare49
 {
@@ -53,10 +55,23 @@ namespace LudumDare49
         private void Awake()
         {
             CarrySocket.OnCarrying += CarrySocket_OnCarrying;
-            InputSignalReceiver.OnActionMapChanged += InputSignalReceiver_OnActionMapChanged;
             _playerSprintSignal.AddReceiver(SprintReceiver);
+            InputUser.onChange += InputUser_onChange;
         }
 
+        private void InputUser_onChange(InputUser user, InputUserChange change, InputDevice device)
+        {
+            if (change == InputUserChange.ControlSchemeChanged)
+            {
+                UpdateSprites(user.controlScheme.Value.name);
+            }
+        }
+
+        private void InputSystem_onDeviceChange(InputDevice arg1, InputDeviceChange arg2)
+        {
+            Debug.Log(arg1);
+            Debug.Log(arg2);
+        }
         private void SprintReceiver(bool val) => _sprint.gameObject.SetActive(!val);
 
         private void CarrySocket_OnCarrying(bool val)
@@ -65,10 +80,11 @@ namespace LudumDare49
             _interact.gameObject.SetActive(!val);
         }
 
-        private void InputSignalReceiver_OnActionMapChanged(UnityEngine.InputSystem.PlayerInput obj)
+        private void UpdateSprites(string name)
         {
-            _keyboardSprites.ForEach(g => g.SetActive(obj.currentControlScheme == "Keyboard&Mouse"));
-            _controllerSprites.ForEach(g => g.SetActive(obj.currentControlScheme == "Gamepad"));
+            Debug.Log(name);
+            _keyboardSprites.ForEach(g => g.SetActive(name == "Keyboard&Mouse"));
+            _controllerSprites.ForEach(g => g.SetActive(name == "Gamepad"));
         }
 
         #endregion
