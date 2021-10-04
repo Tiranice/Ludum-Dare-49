@@ -1,0 +1,23 @@
+{
+    "name": "Tir.LudumDare49",
+    "rootNamespace": "LudumDare49",
+    "references": [
+        "GUID:0d3efb39c3ee75e4f8dbda574ccc716e",
+        "GUID:e048eeec9bdb9d30448017b829deb3f6",
+        "GUID:063477da930297d4caf7a30421ccebfa",
+        "GUID:44f2c9ceeeed52f4390dd81b0af45b0f",
+        "GUID:fad105419507ca44391cc06a760dbbad",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:2c64d5a543d226f4982cf6a41d75c442",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

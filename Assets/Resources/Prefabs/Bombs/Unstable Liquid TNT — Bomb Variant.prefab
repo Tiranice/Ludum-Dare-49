@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &309907935079531458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 645044935666845482, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: af9588cc363330840b97c1be33101d31, type: 2}
+    - target: {fileID: 2162389714176223405, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_Name
+      value: "Unstable Liquid TNT \u2014 Bomb Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404284878729874932, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405167243758483930, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405813936796844158, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454631948945512830, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 11e0aa3611e3840ecb8a4f54e9b9634d, type: 3}
+    - target: {fileID: 5454631948946392784, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b534132e6b6bb0040a16fdbff0538caa, type: 2}
+    - target: {fileID: 5572162680844991636, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1acb1b2fabd52674199ae371324fc48f, type: 2}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455619379381819198, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371445248640248625, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: _explodeOnSprint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371445248640248625, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: _forceToDetinate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371445248640248625, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+      propertyPath: _timeToDetonation
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}

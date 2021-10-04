@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2372923630972939289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 209293798584189610, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595739268971614894, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _upwardsForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _explosiveForce
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _explodeOnSprint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _explosionRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _forceToDetinate
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _interactionType
+      value: Carry Blackpowder Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: _targetLayers.m_Bits
+      value: 1937
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134221248154944186, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134221248154944186, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_Center.z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886655558566620477, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_Name
+      value: Blackpowder Bomb Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}

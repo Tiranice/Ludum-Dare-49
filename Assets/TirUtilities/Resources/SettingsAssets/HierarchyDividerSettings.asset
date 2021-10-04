@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f130ace31bd5e841ae8ad1eccc859df, type: 3}
+  m_Name: HierarchyDividerSettings
+  m_EditorClassIdentifier: 
+  _dividers:
+  - "\u2013\u2013\u2013\u2013\u2013 Camera & Lighting \u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Enviroment \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Structures \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Spawners \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 Player \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013 Crafting System \u2013\u2013\u2013\u2013\u2013\u2013"
+  - "\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013 UI
+    \u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
+  _dividerTitles:
+  - Camera & Lighting
+  - Enviroment
+  - Structures
+  - Spawners
+  - Player
+  - Crafting System
+  - UI
+  _separator: 8211
+  _length: 14

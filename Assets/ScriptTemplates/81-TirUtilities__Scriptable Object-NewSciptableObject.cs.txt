@@ -1,0 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+    #ROOTNAMESPACEBEGIN#
+///<!--
+/// #SCRIPTNAME#.cs
+/// 
+/// Project:  #PROJECT#
+///        
+/// Author :  #AUTHOR#
+/// Company:  #COMPANY#
+/// Created:  #DATETODAY#
+/// Updated:  #DATETODAY#
+/// -->
+/// <summary>
+///
+/// </summary>
+[CreateAssetMenu(fileName = "New#SCRIPTNAME#", menuName = "Scriptable Objects/#SCRIPTNAME#")]
+public class #SCRIPTNAME# : ScriptableObject
+{
+    #region Data Structures
+    
+    #endregion
+    
+    #region Inspector Fields
+    
+    #endregion
+    
+    #region Events & Signals
+    
+    #endregion
+    
+    #region Unity Messages
+    
+    #endregion
+    
+    #region Private Methods
+    
+    #endregion
+    
+    #region Public Methods
+    
+    #endregion
+    
+    #region Private Properties
+    
+    #endregion
+    
+    #region Public Properties
+    
+    #endregion
+}
+#ROOTNAMESPACEEND#

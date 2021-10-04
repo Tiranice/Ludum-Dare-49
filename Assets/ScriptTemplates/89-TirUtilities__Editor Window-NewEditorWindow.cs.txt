@@ -1,0 +1,56 @@
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+    #ROOTNAMESPACEBEGIN#
+///<!--
+/// #SCRIPTNAME#.cs
+/// 
+/// Project:  #PROJECT#
+///        
+/// Author :  #AUTHOR#
+/// Company:  #COMPANY#
+/// Created:  #DATETODAY#
+/// Updated:  #DATETODAY#
+/// -->
+/// <summary>
+///
+/// </summary>
+public class #SCRIPTNAME# : EditorWindow
+{
+    #region Data Structures
+    
+    #endregion
+    
+    #region Fields
+    
+    #endregion
+    
+    #region Open & Close
+    
+    [MenuItem("Menu/#SCRIPTNAME#")]
+    public static void Open()
+    {
+        var window = GetWindow<#SCRIPTNAME#>();
+        window.titleContent = new GUIContent("#SCRIPTNAME#");
+    }
+    
+    #endregion
+    
+    #region Unity Messages
+    
+    private void CreateGUI() => PopulateWindow();
+    
+    #endregion
+    
+    #region Private Methods
+    
+    private void PopulateWindow()
+    {
+        rootVisualElement.Add(new Label("I'm a Window!"));
+    }
+    
+    #endregion
+}
+#ROOTNAMESPACEEND#

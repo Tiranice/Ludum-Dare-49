@@ -1,0 +1,19 @@
+{
+    "name": "Tir.LudumDare49.GameState",
+    "rootNamespace": "LudumDare49.GameState",
+    "references": [
+        "GUID:fad105419507ca44391cc06a760dbbad",
+        "GUID:44f2c9ceeeed52f4390dd81b0af45b0f",
+        "GUID:caf21b0ba61f66145ac7ef02e4ca8e82",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
