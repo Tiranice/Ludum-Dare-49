@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 namespace TirUtilities.Controllers.Experimental
 {
-    using System;
     using TirUtilities.Signals;
     ///<!--
     /// InputSignals.cs
@@ -15,7 +14,7 @@ namespace TirUtilities.Controllers.Experimental
     /// Author :  Devon Wilson
     /// Company:  BlackPheonixSoftware
     /// Created:  Sep 26, 2021
-    /// Updated:  Oct 01, 2021
+    /// Updated:  Oct 04, 2021
     /// -->
     /// <summary>
     ///
@@ -53,23 +52,16 @@ namespace TirUtilities.Controllers.Experimental
         [SerializeField] private BoolSignal _interactInputSignal;
         [SerializeField] private BoolSignal _throwSignal;
 
-        [SerializeField] private Signal _loadCompleteSignal;
         public static event System.Action<PlayerInput> OnActionMapChanged;
 
         #endregion
 
         private void Awake()
         {
-            _playerInput.onControlsChanged += PlayerInput_onControlsChanged;
-            _loadCompleteSignal.AddReceiver(LoadReceiver);
+            _playerInput.onControlsChanged += _playerInput_onControlsChanged;
         }
 
-        private void LoadReceiver()
-        {
-            _playerInput.SwitchCurrentActionMap("Player");
-        }
-
-        private void PlayerInput_onControlsChanged(PlayerInput obj) => OnActionMapChanged?.Invoke(obj);
+        private void _playerInput_onControlsChanged(PlayerInput obj) => OnActionMapChanged?.Invoke(obj);
 
         #region Input Messages
 
