@@ -52,10 +52,8 @@ namespace LudumDare49
                 return;
 
             _solid.SetActive(false);
-            
-            _composite.transform.SetPositionAndRotation(_solid.transform.position, _solid.transform.rotation);
-
             _composite.SetActive(true);
+
             var rigidbodies = _composite.GetComponentsInChildren<Rigidbody>();
             foreach (var rigidbody in rigidbodies)
             {
