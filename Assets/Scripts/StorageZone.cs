@@ -62,8 +62,6 @@ namespace LudumDare49
         {
             base.Interact();
 
-            LogCall();
-
             if (_storedObjects.Count >= _maxStorage || !_carrySocket.IsCarrying) return;
 
             var reagent = _carrySocket.CarriedObject.GetComponent<Reagent>();
