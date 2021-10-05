@@ -7,6 +7,9 @@ using UnityEngine.Events;
 namespace LudumDare49.Crafting
 {
     using LudumDare49.Interaction;
+    using static ReagentData;
+    using Sirenix.OdinInspector;
+
     ///<!--
     /// StorageZone.cs
     /// 

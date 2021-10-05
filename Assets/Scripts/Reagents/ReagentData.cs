@@ -1,4 +1,6 @@
-using TirUtilities.Extensions;
+using Sirenix.OdinInspector;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace LudumDare49
@@ -30,6 +32,17 @@ namespace LudumDare49
         public string Name => _name;
 
         #endregion
+
+        public static IEnumerable GetAllReagentData() =>
+#if UNITY_EDITOR
+            UnityEditor.AssetDatabase.FindAssets($"t:{nameof(ReagentData)}")
+            .Select(x => UnityEditor.AssetDatabase.GUIDToAssetPath(x))
+            .Select(x => new ValueDropdownItem(
+                UnityEditor.AssetDatabase.LoadAssetAtPath<ReagentData>(x).Name,
+                UnityEditor.AssetDatabase.LoadAssetAtPath<ReagentData>(x)));
+#else
+            null;
+#endif
 
         #region Equality
 

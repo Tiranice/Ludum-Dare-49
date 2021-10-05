@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1834427159872623678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1595739268971614894}
   m_RootOrder: 2
@@ -4778,7 +4778,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 49
   m_RenderMode: 0
   m_SortMode: 1
   m_MinParticleSize: 0.00001
@@ -4872,6 +4872,8 @@ MonoBehaviour:
   _explosiveForce: 20
   _explosionRadius: 10
   _upwardsForce: 5
+  _timeToDetonation: 0
+  _timerColor: {r: 1, g: 0, b: 0, a: 1}
   _explosionEffect: {fileID: 1834427159872623619}
   _explodeOnSprint: 1
   _bombMesh: {fileID: 288649486598404334}

@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 567674627150903400, guid: 900c3d557da25f840bf8161ff96a3bfd, type: 3}
+      propertyPath: _storageLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 567674627150903400, guid: 900c3d557da25f840bf8161ff96a3bfd, type: 3}
       propertyPath: _storedReagent
       value: 
       objectReference: {fileID: 0}

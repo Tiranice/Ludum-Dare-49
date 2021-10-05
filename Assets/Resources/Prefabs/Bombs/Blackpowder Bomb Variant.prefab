@@ -56,6 +56,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
@@ -65,6 +69,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834427159872623619, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
       propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623676, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_AllowRoll
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623676, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623676, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623676, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834427159872623676, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}
+      propertyPath: m_ApplyActiveColorSpace
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4296041449566957217, guid: d224dfa7e7f3cb84fb8976a5da2f7737, type: 3}

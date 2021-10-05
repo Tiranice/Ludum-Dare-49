@@ -78,12 +78,7 @@ namespace LudumDare49
 
         private void Start() => AssignReceivers();
 
-        private void Update()
-        {
-            ExplodeOnSprint();
-
-            _explosionEffect.transform.SetPositionAndRotation(_hitPosition, Quaternion.identity);
-        }
+        private void Update() => ExplodeOnSprint();
 
         private void OnCollisionEnter(Collision collision) => CheckCollision(collision);
 
@@ -114,28 +109,6 @@ namespace LudumDare49
 
         #endregion
 
-        #region Explosion
-
-        private void CheckCollision(Collision collision)
-        {
-            if (!LayerInMask(collision.gameObject.layer)) return;
-            if (collision.relativeVelocity.magnitude >= _forceToDetinate)
-            {
-                _hitPosition = transform.position;
-                StartCoroutine(Explode());
-            }
-        }
-
-
-        private void ExplodeOnSprint()
-        {
-            _hitPosition = transform.position;
-            if (_explodeOnSprint && _isSprinting && _isMoving && _isCarried)
-                StartCoroutine(Explode());
-        }
-
-        #endregion
-
         #region Model State
 
         public void SetOpaque()
@@ -153,19 +126,45 @@ namespace LudumDare49
         }
 
         #endregion
-        
-        #region Collision
 
+        #region Explosion
+
+        private void CheckCollision(Collision collision)
+        {
+            if (!LayerInMask(collision.gameObject.layer)) return;
+            if (collision.relativeVelocity.magnitude >= _forceToDetinate)
+            {
+                _hitPosition = collision.collider.ClosestPoint(transform.position);
+                StartCoroutine(Explode());
+            }
+        }
+
+
+        private void ExplodeOnSprint()
+        {
+            _hitPosition = transform.position + _carrySocket.transform.forward * 1.5f;
+            if (_explodeOnSprint && _isSprinting && _isMoving && _isCarried)
+                StartCoroutine(Explode());
+        }
 
         private IEnumerator Explode()
         {
-            if (_timeToDetonation > 0)
-            {
-                StartTimerVisual();
-                yield return new WaitForSeconds(_timeToDetonation);
-            }
+            //if (_timeToDetonation > 0)
+            //{
+            //    StartTimerVisual();
+            //    yield return new WaitForSeconds(_timeToDetonation);
+            //}
 
+            TryGetComponent(out Rigidbody rigidbody);
+            rigidbody.CancelAllVelocity();
+            rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            GetComponent<Collider>().enabled = false;
+
+            _explosionEffect.transform.SetParent(null);
+            _explosionEffect.transform.SetPositionAndRotation(_hitPosition, Quaternion.identity);
+            _explosionEffect.Play();
             _bombMesh.SetActive(false);
+
             var colliders = Physics.OverlapSphere(transform.position, _explosionRadius);
 
             foreach (var hit in colliders)
@@ -176,16 +175,14 @@ namespace LudumDare49
                                                             _explosionRadius,
                                                             _upwardsForce); 
             }
-            _explosionEffect.Play();
             
             if (_carrySocket.CarriedObject == gameObject)
                 _carrySocket.DropCarriedObject();
 
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            GetComponent<Collider>().enabled = false;
 
             yield return new WaitForSeconds(3.0f);
 
+            Destroy(_explosionEffect.gameObject);
             Destroy(gameObject);
         }
 

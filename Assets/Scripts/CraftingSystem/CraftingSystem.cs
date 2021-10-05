@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TirUtilities.Extensions;
@@ -26,9 +27,14 @@ namespace LudumDare49.Crafting
         [System.Serializable]
         public struct BombType
         {
-            [SerializeField] private string _name;
-            [SerializeField] private Recipe _recipe;
-            [SerializeField] private GameObject _prefab;
+            [HorizontalGroup("BombType")]
+            [SerializeField, FoldoutGroup("BombType/$Name")] 
+            private string _name;
+            [SerializeField, FoldoutGroup("BombType/$Name"), HideLabel] 
+            private Recipe _recipe;
+            [SerializeField, TableColumnWidth(57, resizable: false), AssetsOnly,
+                PreviewField(Alignment = ObjectFieldAlignment.Center)]
+            private GameObject _prefab;
 
             public string Name => _name;
             public Recipe Recipe => _recipe;
@@ -38,7 +44,8 @@ namespace LudumDare49.Crafting
         [System.Serializable]
         public struct Recipe 
         {
-            [SerializeField] private List<ReagentData> _reagents;
+            [SerializeField, ValueDropdown(nameof(GetReagentData))]
+            private List<ReagentData> _reagents;
             public IReadOnlyList<ReagentData> Reagents
             {
                 get
@@ -47,13 +54,16 @@ namespace LudumDare49.Crafting
                     return _reagents;
                 }
             }
+
+            public static IEnumerable GetReagentData() => ReagentData.GetAllReagentData();
         }
 
         #endregion
 
         #region Inspector Fields
 
-        [SerializeField] private List<BombType> _bombTypes = new List<BombType>();
+        [SerializeField, TableList(NumberOfItemsPerPage = 4)] 
+        private List<BombType> _bombTypes = new List<BombType>();
         [SerializeField] private List<StorageZone> _storageZones = new List<StorageZone>();
         [SerializeField] private Transform _spawnPoint;
 
@@ -109,10 +119,8 @@ namespace LudumDare49.Crafting
         public void CraftBomb()
         {
             if (_bombObject.IsNull())
-            {
-                _selectedReagents.Clear();
                 return;
-            }
+
             _bombObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             _bombObject.GetComponent<Bomb>().SetOpaque();
             foreach (var reagent in _selectedReagents)
