@@ -4,7 +4,7 @@ using TirUtilities.Signals;
 using TMPro;
 using UnityEngine;
 
-namespace LudumDare49
+namespace LudumDare49.Interaction
 {
     ///<!--
     /// InteractionSystem.cs
@@ -14,7 +14,7 @@ namespace LudumDare49
     /// Author :  Devon Wilson
     /// Company:  Black Pheonix Software
     /// Created:  Oct 01, 2021
-    /// Updated:  Oct 01, 2021
+    /// Updated:  Oct 04, 2021
     /// -->
     /// <summary>
     ///
@@ -38,7 +38,6 @@ namespace LudumDare49
         #region Events & Signals
 
         [Header("Signals")]
-        [SerializeField] private TriggerVolumeSignal _interactionTriggerSignal;
         [SerializeField] private BoolSignal _playerInteractSignal;
         [SerializeField] private GameObjectSignal _cameraLookSignal;
 

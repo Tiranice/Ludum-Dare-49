@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace LudumDare49
 {
+    using LudumDare49.Interaction;
     ///<!--
     /// Bomb.cs
     /// 
@@ -75,11 +76,7 @@ namespace LudumDare49
             _carrySocket = FindObjectOfType<CarrySocket>();
         }
 
-        private void Start()
-        {
-            _playerSprintSignal.AddReceiver(SprintReceiver);
-            _playerMoveSignal.AddReceiver(SetIsMoving);
-        }
+        private void Start() => AssignReceivers();
 
         private void Update()
         {
@@ -90,7 +87,19 @@ namespace LudumDare49
 
         private void OnCollisionEnter(Collision collision) => CheckCollision(collision);
 
-        private void OnDestroy()
+        private void OnDestroy() => RemoveReceivers();
+
+        #endregion
+
+        #region Setup & Teardown
+
+        private void AssignReceivers()
+        {
+            _playerSprintSignal.AddReceiver(SprintReceiver);
+            _playerMoveSignal.AddReceiver(SetIsMoving);
+        }
+
+        private void RemoveReceivers()
         {
             _playerSprintSignal.RemoveReceiver(SprintReceiver);
             _playerMoveSignal.RemoveReceiver(SetIsMoving);
@@ -203,9 +212,13 @@ namespace LudumDare49
 
         #endregion
 
+        #region Public Properties
+
         public float ExplosiveForce => _explosiveForce;
         public float ExplosionRadius => _explosionRadius;
-        public float UpwardsForce => _upwardsForce;
+        public float UpwardsForce => _upwardsForce; 
+
+        #endregion
 
         public override string InteractionType => $"{base.InteractionType}";
         private bool LayerInMask(int layer) => (1 << layer & _targetLayers) != 0;

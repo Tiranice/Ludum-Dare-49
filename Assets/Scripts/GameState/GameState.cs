@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using TirUtilities.Extensions;
@@ -15,17 +16,13 @@ namespace LudumDare49.GameStateControl
     /// Author :  Devon Wilson
     /// Company:  Black Pheonix Software
     /// Created:  Oct 03, 2021
-    /// Updated:  Oct 03, 2021
+    /// Updated:  Oct 04, 2021
     /// -->
     /// <summary>
     ///
     /// </summary>
     public class GameState : MonoBehaviour
     {
-        #region Data Structures
-
-        #endregion
-
         #region Inspector Fields
 
         [SerializeField] private PlayerInput _playerInput;
@@ -35,6 +32,7 @@ namespace LudumDare49.GameStateControl
 
         #region Events & Signals
 
+        [Title("Signals")]
         [SerializeField] private Signal _victorySignal;
         [SerializeField] private GameObjectSignal _destructionSignal;
 
@@ -49,11 +47,26 @@ namespace LudumDare49.GameStateControl
             if (_playerInput.IsNull())
                 _playerInput = FindObjectOfType<PlayerInput>();
 
+            AssignReceivers();
+        }
+
+        private void OnDestroy()
+        {
+            if (_destructionSignal.NotNull())
+                _destructionSignal.RemoveReceiver(DestrucitonReceiver);
+        }
+
+        #endregion
+
+        #region Setup & Teardown
+
+        private void AssignReceivers()
+        {
             if (_destructionSignal.NotNull())
                 _destructionSignal.AddReceiver(DestrucitonReceiver);
         }
 
-        private void OnDestroy()
+        private void RemoveReceivers()
         {
             if (_destructionSignal.NotNull())
                 _destructionSignal.RemoveReceiver(DestrucitonReceiver);
@@ -68,6 +81,8 @@ namespace LudumDare49.GameStateControl
             if (!destroyed.TryGetComponent(out Destructable destructable))
                 return;
 
+            _ = destructable;
+
             if (AllDestroyed && _victorySignal.NotNull())
             {
                 _playerInput.SwitchCurrentActionMap("UI");
@@ -80,13 +95,17 @@ namespace LudumDare49.GameStateControl
 
         #region Helpers
 
+        private bool AllDestroyed => !_destructables.Any(d => d.IsDestroyed is false);
+
+        #endregion
+
+        #region Debug
+
         [ContextMenu(nameof(TestAllDestroyed))]
         private void TestAllDestroyed()
         {
             Debug.Log($"{_destructables.Count}  {AllDestroyed}");
         }
-
-        private bool AllDestroyed => !_destructables.Any(d => d.IsDestroyed is false);
 
         #endregion
     }

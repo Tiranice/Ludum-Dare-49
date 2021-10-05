@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using System.Linq;
+using TirUtilities.Extensions;
 using UnityEngine;
 
-using static TirUtilities.TirLogger;
-using TirUtilities.Extensions;
-
-namespace LudumDare49
+namespace LudumDare49.Crafting
 {
     ///<!--
     /// CraftingSystem.cs
@@ -32,7 +29,6 @@ namespace LudumDare49
             [SerializeField] private string _name;
             [SerializeField] private Recipe _recipe;
             [SerializeField] private GameObject _prefab;
-
 
             public string Name => _name;
             public Recipe Recipe => _recipe;
@@ -78,10 +74,7 @@ namespace LudumDare49
 
         #region Unity Messages
 
-        private void Awake()
-        {
-            BuildRecipeBook();
-        }
+        private void Awake() => BuildRecipeBook();
 
         #endregion
 
@@ -90,9 +83,7 @@ namespace LudumDare49
         private void BuildRecipeBook()
         {
             foreach (var bomb in _bombTypes)
-            {
                 _recipeBook[bomb.Recipe.Reagents] = bomb;
-            }
 
             _selectedBomb = _bombTypes[0];
         }

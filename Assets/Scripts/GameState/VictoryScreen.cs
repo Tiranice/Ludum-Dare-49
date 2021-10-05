@@ -12,7 +12,7 @@ namespace LudumDare49.GameStateControl
     /// Author :  Devon Wilson
     /// Company:  Black Pheonix Software
     /// Created:  Oct 03, 2021
-    /// Updated:  Oct 03, 2021
+    /// Updated:  Oct 04, 2021
     /// -->
     /// <summary>
     ///
@@ -33,13 +33,21 @@ namespace LudumDare49.GameStateControl
 
         #region Unity Messages
 
-        private void Awake()
+        private void Awake() => AssignReceivers();
+
+        private void OnDestroy() => RemoveReceivers();
+
+        #endregion
+
+        #region Setup & Teardown
+
+        private void AssignReceivers()
         {
             if (_victorySignal.NotNull())
                 _victorySignal.AddReceiver(Open);
         }
 
-        private void OnDestroy()
+        private void RemoveReceivers()
         {
             if (_victorySignal.NotNull())
                 _victorySignal.RemoveReceiver(Open);

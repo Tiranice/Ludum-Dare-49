@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace TirUtilities.Controllers.Experimental
 {
+    using TirUtilities.Extensions;
     using TirUtilities.Signals;
     ///<!--
     /// InputSignals.cs
@@ -132,7 +133,9 @@ namespace TirUtilities.Controllers.Experimental
 
         private void SetCursorLockState(bool hasFocus)
         {
-            if (_playerInput.currentActionMap.name != "Player")
+            if (_playerInput.IsNull()) return;
+
+            if ( _playerInput.currentActionMap.name != "Player")
             {
                 Cursor.lockState = CursorLockMode.None;
                 return;

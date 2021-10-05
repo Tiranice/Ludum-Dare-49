@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TirUtilities.Extensions;
 using TirUtilities.Signals;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -53,6 +54,13 @@ namespace LudumDare49
             InputUser.onChange += InputUser_onChange;
         }
 
+        private void OnDestroy()
+        {
+            CarrySocket.OnCarrying -= CarrySocket_OnCarrying;
+            _playerSprintSignal.RemoveReceiver(SprintReceiver);
+            InputUser.onChange -= InputUser_onChange;
+        }
+
         private void InputUser_onChange(InputUser user, InputUserChange change, InputDevice device)
         {
             if (change == InputUserChange.ControlSchemeChanged)
@@ -63,15 +71,18 @@ namespace LudumDare49
 
         private void CarrySocket_OnCarrying(bool val)
         {
+            if (_throw.IsNull() || _interact.IsNull()) return;
             _throw.gameObject.SetActive(val);
             _interact.gameObject.SetActive(!val);
         }
 
         private void UpdateSprites(string name)
         {
-            Debug.Log(name);
-            _keyboardSprites.ForEach(g => g.SetActive(name == "Keyboard&Mouse"));
-            _controllerSprites.ForEach(g => g.SetActive(name == "Gamepad"));
+            if (_keyboardSprites.IsNullOrEmpty() || _controllerSprites.IsNullOrEmpty())
+                return;
+
+            _keyboardSprites.ForEach(g => { if (g.NotNull()) g.SetActive(name == "Keyboard&Mouse"); });
+            _controllerSprites.ForEach(g => { if (g.NotNull()) g.SetActive(name == "Gamepad"); });
         }
 
         #endregion

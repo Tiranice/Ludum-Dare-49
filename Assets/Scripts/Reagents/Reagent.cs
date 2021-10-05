@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace LudumDare49
 {
+    using LudumDare49.Interaction;
     ///<!--
     /// Reagent.cs
     /// 

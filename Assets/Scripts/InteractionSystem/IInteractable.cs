@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace LudumDare49
+namespace LudumDare49.Interaction
 {
     ///<!--
     /// IInteractable.cs
