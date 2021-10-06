@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8933007494114661791, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _spawnRate
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: _isSpawning
       value: 1
@@ -15,6 +23,10 @@ PrefabInstance:
       propertyPath: _startOnEnable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _objectPool._poolPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6561897250366090590, guid: 563e910bbc5de2741a56a1e0cc1251fa, type: 3}
     - target: {fileID: 8933007494853711889, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_Name
       value: "Pyrite \u2014 Reagent Spawner"
@@ -25,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -18.15
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: -1.3000001
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89,11 +101,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8933007495304169296, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: _dimensions._radius
-      value: 2
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007495304169391, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.34999847
       objectReference: {fileID: 0}
     - target: {fileID: 8933007495304169391, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007495304169391, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6500001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}

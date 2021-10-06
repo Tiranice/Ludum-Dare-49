@@ -7,9 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8933007494114661791, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _startOnEnable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _objectPool._maxPoolSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _objectPool._prepoolAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494853711888, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _objectPool._prepooledObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711889, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_Name
-      value: "Niter \u2014 Reagent Spawner"
+      value: "Niter \u2014 Reagent Spawner Variant"
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_RootOrder
@@ -17,15 +41,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.5
+      value: 25.050001
       objectReference: {fileID: 0}
     - target: {fileID: 8933007494853711983, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,6 +86,14 @@ PrefabInstance:
     - target: {fileID: 8933007494934600102, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
       propertyPath: _mainCamera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007494934600104, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933007495304169296, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}
+      propertyPath: _gizmoColor.a
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3f12b7a0adde904e91d4914fcd717e2, type: 3}

@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2560994086309947318
 RectTransform:
   m_ObjectHideFlags: 0
@@ -271,6 +271,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LudumDare49.ActiveSelfSetter, Tir.LudumDare49
+        m_MethodName: ToggleOffLocked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LudumDare49.ActiveSelfSetter, Tir.LudumDare49
+        m_MethodName: ToggleOffLocked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &2560994087130431979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -331,7 +355,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2560994087917279211}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 31406d63b5b79594f8940797ad17d69c, type: 3}
 --- !u!23 &2560994087917279222
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -351,7 +375,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 41680dad0f0243748b4e228f49a2e3c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -419,10 +443,20 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 8f8a8583fe4e39542a2597c3da0796f5, type: 2}
       - {fileID: 11400000, guid: af119ea3eeb9d28498d19f231b2cb1fd, type: 2}
     _prefab: {fileID: 8169471943791378724, guid: 53a8879bcd6c89641a20ea8504498cc0, type: 3}
+  - _name: Liquid TNT
+    _recipe:
+      _reagents:
+      - {fileID: 11400000, guid: 8f8a8583fe4e39542a2597c3da0796f5, type: 2}
+      - {fileID: 11400000, guid: af119ea3eeb9d28498d19f231b2cb1fd, type: 2}
+      - {fileID: 11400000, guid: 3fe8d211168a2e242a4195783c416642, type: 2}
+    _prefab: {fileID: 2162389714176223405, guid: 7932fe5927681ac40bb25c32996bb338, type: 3}
+  - _name: Unstable Liquid TNT
+    _recipe:
+      _reagents:
+      - {fileID: 11400000, guid: 8f8a8583fe4e39542a2597c3da0796f5, type: 2}
+      - {fileID: 11400000, guid: 3fe8d211168a2e242a4195783c416642, type: 2}
+    _prefab: {fileID: 1895833349462895471, guid: a715cb09673bfbf4fbbb641159335c6b, type: 3}
   _storageZones:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
