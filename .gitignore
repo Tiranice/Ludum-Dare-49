@@ -73,15 +73,23 @@ crashlytics-build.properties
 # Streaming Assets folder
 /[Aa]ssets/[Ss]treaming[Aa]ssets/
 
-# GitHub Plugin
-/[Aa]ssets/[Pp]lugins/[Gg]it[Hh]ub/
-/[Aa]ssets/[Pp]lugins/[Gg]it[Hh]ub.meta
-/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/
-/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets.meta
+# Plugins
+/[Aa]ssets/[Pp]lugins/[Gg]it[Hh]ub/**/*.dll
+/[Aa]ssets/[Pp]lugins/[Gg]it[Hh]ub/**/*.dll.meta
 
-# Asset Usage Finder
 /[Aa]ssets/[Aa]sset [Uu]sage [Ff]inder*
 /[Aa]ssets/[Pp]lugins/[Aa]sset [Uu]sage [Ff]inder*
+
+/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**.cs
+/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**.cs.meta
+
+/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.dll
+/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.dll.meta
+/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.unitypackage
+/[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.unitypackage.meta
+
+/[Aa]ssets/[Pp]lugins/[Oo]din [Ii]nspector/**.dll
+/[Aa]ssets/[Pp]lugins/[Oo]din [Ii]nspector/**.dll.meta
 
 # Documentation
 Documentation/api/
@@ -89,3 +97,6 @@ Documentation/index.*
 _site/
 
 /[Rr]ecordings/
+
+# Plastic
+/.plastic*
