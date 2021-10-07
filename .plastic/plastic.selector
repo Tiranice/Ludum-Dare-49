@@ -1,4 +1,0 @@
-repository "Ludum Dare 49@local"
-  path "/"
-    br "/main"
-    co "/main"
