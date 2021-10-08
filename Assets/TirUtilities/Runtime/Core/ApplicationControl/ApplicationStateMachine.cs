@@ -105,14 +105,16 @@ namespace TirUtilities.Experimental
         private void AssignReceivers()
         {
 #if ENABLE_INPUT_SYSTEM
-            _playerPauseSignal.AddReceiver(TogglePaused);
+            if (_playerPauseSignal.NotNull())
+                _playerPauseSignal.AddReceiver(TogglePaused);
 #endif
         }
 
         private void RemoveReceivers()
         {
 #if ENABLE_INPUT_SYSTEM
-            _playerPauseSignal.RemoveReceiver(TogglePaused);
+            if (_playerPauseSignal.NotNull())
+                _playerPauseSignal.RemoveReceiver(TogglePaused);
 #endif
         }
         
