@@ -13,6 +13,7 @@ namespace TirUtilities.Experimental
 {
     using TirUtilities.Extensions;
     using TirUtilities.Signals;
+    using TirUtilities.UI;
 
     ///<!--
     /// ApplicationStateMachine.cs
@@ -123,8 +124,8 @@ namespace TirUtilities.Experimental
 
         private void RemoveListeners()
         {
-            _playingState.OnEnterState -= _playSignal.Emit;
-            _pausedState.OnEnterState -= _pauseSignal.Emit;
+            _playingState.OnEnterState += _playSignal.Emit;
+            _pausedState.OnEnterState += _pauseSignal.Emit;
         }
 
         private void Teardown()

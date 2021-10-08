@@ -22,10 +22,10 @@ namespace TirUtilities.Experimental
     {
         public override void EnterState(ApplicationStateMachine stateMachine)
         {
-            base.EnterState(stateMachine);
-
-            if (stateMachine.CurrentState is QuittingState) return;
             if (stateMachine.BlockPauseState) return;
+            if (stateMachine.CurrentState is QuittingState) return;
+            
+            base.EnterState(stateMachine);
 
             stateMachine.CurrentState = this;
 
