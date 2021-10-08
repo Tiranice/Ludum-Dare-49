@@ -52,6 +52,7 @@ namespace TirUtilities.Controllers.Experimental
         [SerializeField] private BoolSignal _sprintSignal;
         [SerializeField] private BoolSignal _interactInputSignal;
         [SerializeField] private BoolSignal _throwSignal;
+        [SerializeField] private Signal _pauseSignal;
 
         public static event System.Action<PlayerInput> OnActionMapChanged;
 
@@ -72,6 +73,7 @@ namespace TirUtilities.Controllers.Experimental
         public void OnSprint(InputValue value) => SprintInput(value.isPressed);
         public void OnInteract(InputValue value) => InteractInput(value.isPressed);
         public void OnThrow(InputValue value) => ThrowInput(value.isPressed);
+        public void OnPause(InputValue value) => PauseInput();
 
         #endregion
 
@@ -125,24 +127,24 @@ namespace TirUtilities.Controllers.Experimental
             if (_verboseLogging) Debug.Log($"Sprint Input => {shouldThrow}");
         }
 
+        public void PauseInput()
+        {
+            _pauseSignal.Emit();
+
+            //if (_verboseLogging) Debug.Log($"Sprint Input => {}");
+        }
+
         #endregion
 
         #region Cursor Lock
-
+#if !UNITY_IOS || !UNITY_ANDROID
         private void OnApplicationFocus(bool hasFocus) => SetCursorLockState(hasFocus);
 
         private void SetCursorLockState(bool hasFocus)
         {
-            if (_playerInput.IsNull()) return;
-
-            if ( _playerInput.currentActionMap.name != "Player")
-            {
-                Cursor.lockState = CursorLockMode.None;
-                return;
-            }
             Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
         }
-
+#endif
         #endregion
     }
 }
