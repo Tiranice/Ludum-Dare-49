@@ -80,16 +80,16 @@ crashlytics-build.properties
 /[Aa]ssets/[Aa]sset [Uu]sage [Ff]inder*
 /[Aa]ssets/[Pp]lugins/[Aa]sset [Uu]sage [Ff]inder*
 
-/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**.cs
-/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**.cs.meta
+/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**/*.cs
+/[Aa]ssets/[Pp]lugins/[Ff]ullscreen/**/*.cs.meta
 
 /[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.dll
 /[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.dll.meta
 /[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.unitypackage
 /[Aa]ssets/[Pp]lugins/[Rr]ainbow[Aa]ssets/**/*.unitypackage.meta
 
-/[Aa]ssets/[Pp]lugins/[Oo]din [Ii]nspector/**.dll
-/[Aa]ssets/[Pp]lugins/[Oo]din [Ii]nspector/**.dll.meta
+/[Aa]ssets/[Pp]lugins/[Ss]irenix/**/*.dll
+/[Aa]ssets/[Pp]lugins/[Ss]irenix/**/*.dll.meta
 
 # Documentation
 Documentation/api/
