@@ -1,11 +1,17 @@
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TirUtilities.Experimental
 {
+    using TirUtilities.Extensions;
     using TirUtilities.Signals;
 
     ///<!--
@@ -27,6 +33,28 @@ namespace TirUtilities.Experimental
 
         [SerializeField, ScenePath]
         private string _mainMenuScene;
+
+#if ENABLE_INPUT_SYSTEM
+        
+        [Header("Input System")]
+        [SerializeField] private InputActionAsset _inputActions;
+
+#if ODIN_INSPECTOR
+        [ValueDropdown(nameof(GetNames)), DisableIf("@_inputActions == null"), SerializeField] 
+        private string _playerActionMap = string.Empty;
+
+        [ValueDropdown(nameof(GetNames)), DisableIf("@_inputActions == null"), SerializeField] 
+        private string _uiActionMap = string.Empty;
+
+        private IEnumerable<string> GetNames() =>
+            _inputActions.NotNull() ? _inputActions.actionMaps.Select(m => m.name)
+                                    : new string[] { string.Empty };
+#else
+        [SerializeField] private string _playerActionMap = string.Empty;
+
+        [SerializeField] private string _uiActionMap = string.Empty;
+#endif
+#endif
 
         #endregion
 
@@ -156,6 +184,11 @@ namespace TirUtilities.Experimental
         public bool InGame { get; set; } = false;
         public bool EnterUIModeOnPause => _enterUIModeOnPause;
         public bool BlockPauseState { get; private set; } = false;
+
+#if ENABLE_INPUT_SYSTEM
+        public string PlayerActionMap => _playerActionMap;
+        public string UIActionMap => _uiActionMap;
+#endif
 
         #endregion
     }
