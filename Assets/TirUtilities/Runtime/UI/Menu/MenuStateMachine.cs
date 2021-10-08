@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace TirUtilities.UI
 {
+    using TirUtilities.Experimental;
     using TirUtilities.Extensions;
 
     ///<!--
@@ -35,6 +36,7 @@ namespace TirUtilities.UI
         [Header("States and Pages")]
         [Tooltip("The menu state for the root menu page.")]
         [SerializeField] private MenuState _rootState;
+        [SerializeField] private bool _enterRootStateOnStart = true;
         [Space]
         [Tooltip("All of the pages that this state machine manages.")]
         [SerializeField] private List<MenuPage> _menuPages;
@@ -89,7 +91,8 @@ namespace TirUtilities.UI
             foreach (MenuState state in _transitions.Keys)
                 _transitions[state].HidePanel();
 
-            TransitionTo(_rootState);
+            if (_enterRootStateOnStart)
+                TransitionTo(_rootState);
         }
 
         #endregion
@@ -129,9 +132,18 @@ namespace TirUtilities.UI
             }
         }
 
+        public void OpenMenu() => TransitionTo(_rootState);
+
+        public void ExitMenu()
+        {
+            TransitionTo(_rootState);
+            if (_activePage.NotNull())
+                _activePage.HidePanel();
+        }
+
         #endregion
 
-        #region Public Methods
+        #region Public Properties
 
         public List<MenuPage> MenuPages => _menuPages;
 
