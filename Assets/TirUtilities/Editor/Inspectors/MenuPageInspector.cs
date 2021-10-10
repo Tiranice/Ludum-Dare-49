@@ -26,8 +26,8 @@ namespace TirUtilities.Editor
     {
         #region String Constants
 
-        private const string _ParentFolderPath = "Assets/Resources/ScriptableObjects";
-        private const string _FolderPath = "Assets/Resources/ScriptableObjects/MenuState";
+        private const string _ParentFolderPath = "Assets/Resources";
+        private const string _FolderPath = "Assets/Resources/MenuStates/";
 
         #endregion
 
@@ -106,7 +106,7 @@ namespace TirUtilities.Editor
             if (!AssetDatabase.IsValidFolder($"{_FolderPath}"))
                 AssetDatabase.CreateFolder(_ParentFolderPath, "MenuStates");
 
-            AssetDatabase.CreateAsset(menuState, $"{_FolderPath}/{_newStateName}.asset");
+            AssetDatabase.CreateAsset(menuState, $"{_FolderPath}{_newStateName}.asset");
             AssetDatabase.SaveAssets();
 
             serializedObject.FindProperty("_state").objectReferenceValue = menuState;
