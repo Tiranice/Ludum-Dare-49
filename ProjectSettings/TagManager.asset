@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tooltip
+    uniqueID: 3348100871
+    locked: 0

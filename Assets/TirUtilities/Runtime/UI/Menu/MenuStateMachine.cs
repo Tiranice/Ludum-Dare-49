@@ -1,10 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TirUtilities.UI
 {
-    using TirUtilities.Experimental;
     using TirUtilities.Extensions;
 
     ///<!--
@@ -13,8 +13,8 @@ namespace TirUtilities.UI
     /// Project:  TirUtilities
     /// 
     /// Author :  Devon Wilson
-    /// Created:  June 03, 2021
-    /// Updated:  Aug. 22, 2021
+    /// Created:  Jun 03, 2021
+    /// Updated:  Cct 10, 2021
     /// -->
     /// <summary>
     /// Controls the state of a set of <see cref="MenuPage"/> objects in the scene.
@@ -70,11 +70,14 @@ namespace TirUtilities.UI
 
         #region Unity Messages
 
+        private void Awake() => FetchMenuPages();
         private void Start() => InitTransitionTable();
 
         #endregion
 
         #region Setup & Teardown
+
+        private void FetchMenuPages() => _menuPages = FindObjectsOfType<MenuPage>().ToList();
 
         /// <summary> Setup all table of menu pages and states. </summary>
         private void InitTransitionTable()
@@ -82,7 +85,6 @@ namespace TirUtilities.UI
             foreach (MenuPage page in _menuPages)
             {
                 if (page.IsNull()) continue;
-
                 if (_transitions.ContainsKey(page.State)) continue;
 
                 _transitions[page.State] = page;
