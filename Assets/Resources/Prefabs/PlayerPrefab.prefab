@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991565716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 1.25}
+  m_LocalPosition: {x: 0, y: -0.25, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3535218647264425251}
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _throwPower: 900
   _holdForce: 20
+  _carriedDrag: 20
   _cameraTransform: {fileID: 0}
   _carriedObject: {fileID: 0}
   _socketSignal: {fileID: 11400000, guid: f1f807398f68cd446a15903bcdfc55c9, type: 2}
@@ -327,6 +328,7 @@ GameObject:
   - component: {fileID: 5368163177660504928}
   - component: {fileID: 7275993093453677336}
   - component: {fileID: 4071099866503191131}
+  - component: {fileID: 2102074886}
   m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -362,8 +364,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.7
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
@@ -412,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _verboseLogging: 0
+  _playerInput: {fileID: 1445037641001239687}
   _move: {x: 0, y: 0}
   _look: {x: 0, y: 0}
   _isJumping: 0
@@ -424,6 +427,7 @@ MonoBehaviour:
   _sprintSignal: {fileID: 11400000, guid: cba92a59754cb2143a1eae8eb04d3a7d, type: 2}
   _interactInputSignal: {fileID: 11400000, guid: 1d25cd456fd8c30438643caa8f4de115, type: 2}
   _throwSignal: {fileID: 11400000, guid: d0852e4c187ba5b4c8d27fee4afee677, type: 2}
+  _pauseSignal: {fileID: 11400000, guid: daaf24464e47b28488fe7aaa19f3b551, type: 2}
 --- !u!114 &7275993093453677336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +482,23 @@ MonoBehaviour:
   _gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   _sizeScaler: 1
   _lineThickness: 10
+--- !u!114 &2102074886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651285622126855218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d09bd2a5c839c34c87bfee7dd1748a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  canPush: 1
+  strength: 1.25
 --- !u!1 &4981064362240411617
 GameObject:
   m_ObjectHideFlags: 0

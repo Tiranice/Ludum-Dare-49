@@ -1,16 +1,12 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System.Collections;
-using System.Collections.Generic;
+using TirUtilities;
 using TirUtilities.Extensions;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using UnityEngine.InputSystem.UI;
 using UnityEngine.EventSystems;
-using TirUtilities;
-using UnityEditor.AnimatedValues;
+using UnityEngine.UI;
 
 namespace LudumDare49
 {
@@ -47,7 +43,7 @@ namespace LudumDare49
             public string WebsiteRoute => _websiteRoute;
         }
 
-        private static readonly IEnumerable _routes = new ValueDropdownList<Route>()
+        private static readonly IEnumerable _Routes = new ValueDropdownList<Route>()
         {
             { "Ludum Dare 48", new Route("Ludum Dare 48", "ldj.am/$242513") },
             { "GitHub", new Route("Github – Tiranice", "https://github.com/Tiranice") },
@@ -88,14 +84,8 @@ namespace LudumDare49
 
         #endregion
 
-        [SerializeField, DisplayOnly] private AnimBool _isTooltipShown;
+        [SerializeField, DisplayOnly] private bool _isTooltipShown;
         [SerializeField, DisplayOnly] private bool _timerIsRunning = false;
-
-        private void OnEnable()
-        {
-            _isTooltipShown = new AnimBool(false);
-            _isTooltipShown.valueChanged.AddListener(Tooltip);
-        }
 
         private void UpdateButton()
         {
@@ -116,13 +106,13 @@ namespace LudumDare49
         public void OnPointerEnter(PointerEventData eventData)
         {
             SetLinkColor(_linkHoverColor, eventData);
-            if (_timerIsRunning || _isTooltipShown.value) return;
+            if (_timerIsRunning || _isTooltipShown) return;
             StartCoroutine(DelayedShowTooltip(eventData));
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _isTooltipShown.target = false;
+            Tooltip(false);
             _timerIsRunning = false;
             StopAllCoroutines();
             SetLinkColor(_linkColor, eventData);
@@ -143,9 +133,10 @@ namespace LudumDare49
             return linkIndex != -1 ? _text.textInfo.linkInfo[linkIndex] : default;
         }
 
-        private void Tooltip()
+        private void Tooltip(bool isShown)
         {
-            _tooltip.alpha = _isTooltipShown.faded;
+            _isTooltipShown = isShown;
+            _tooltip.alpha = _isTooltipShown ? 1.0f : 0.0f;
         }
 
         private IEnumerator DelayedShowTooltip(PointerEventData eventData)
@@ -156,7 +147,7 @@ namespace LudumDare49
             yield return new WaitForSeconds(_tooltipDelay);
             _tooltip.GetComponentInChildren<TMP_Text>().SetText(GetLinkInfo(eventData).GetLinkID());
             LayoutRebuilder.ForceRebuildLayoutImmediate(_tooltip.GetComponent<RectTransform>());
-            _isTooltipShown.target = true;
+            Tooltip(true);
         }
     }
 }

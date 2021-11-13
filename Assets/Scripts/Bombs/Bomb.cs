@@ -7,6 +7,8 @@ using UnityEngine;
 namespace LudumDare49
 {
     using LudumDare49.Interaction;
+    using UnityEngine.Events;
+
     ///<!--
     /// Bomb.cs
     /// 
@@ -59,7 +61,8 @@ namespace LudumDare49
 
         #region Events & Signals
 
-        //[Header("Events")]
+        [Header("Events")]
+        public UnityEvent OnExploded;
 
         [Header("Signals")]
         [SerializeField] private GameObjectSignal _carrySocketSignal;
@@ -134,7 +137,7 @@ namespace LudumDare49
             if (!LayerInMask(collision.gameObject.layer)) return;
             if (collision.relativeVelocity.magnitude >= _forceToDetinate)
             {
-                _hitPosition = collision.collider.ClosestPoint(transform.position);
+                _hitPosition = collision.collider.ClosestPointOnBounds(transform.position);
                 StartCoroutine(Explode());
             }
         }
@@ -179,6 +182,7 @@ namespace LudumDare49
             if (_carrySocket.CarriedObject == gameObject)
                 _carrySocket.DropCarriedObject();
 
+            OnExploded.SafeInvoke();
 
             yield return new WaitForSeconds(3.0f);
 
